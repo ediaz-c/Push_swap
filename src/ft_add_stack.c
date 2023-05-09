@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:33:45 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 14:20:49 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/09 17:12:06 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	ft_add_stack(t_list **stack, int num_args, char **args)
 		ft_lstadd_back(stack, node);
 		i++;
 	}
+	ft_add_index(stack);
 	if (num_args == 2)
 		ft_free(list);
 }

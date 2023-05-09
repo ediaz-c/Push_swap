@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:17:35 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 18:52:53 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/09 19:57:07 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_putstr(char *str);
 
 // SRC
 void	ft_add_stack(t_list **stack, int num_args, char **args);
+void	ft_sort_stack(t_list **stack_a, t_list **stack_b);
 
 // lst
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -47,4 +48,14 @@ void	ft_lstdelone(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int data);
 int		ft_lstsize(t_list *lst);
+
+// MOVEMENTS
+void	sa(t_list **stack_a);
+void	sd(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_a, t_list **stack_b);
+void	ra(t_list **stack_a);
+void	rb(t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b);
 #endif

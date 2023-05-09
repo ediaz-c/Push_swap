@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:02:13 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 14:20:39 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/09 19:35:09 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	t_list	*ft_get_node_min(t_list **stack)
 	current = *stack;
 	while (current)
 	{
-		if (current->index == -1 && (first == 0 || current->index < min->index))
+		if (current->index == -1 && (first == 0 || current->data < min->data))
 		{
 			first = 1;
 			min = current;

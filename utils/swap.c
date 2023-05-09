@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:07:07 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 18:34:43 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/09 19:59:36 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+static void	swap(t_list **stack)
+{
+	int		size;
+	t_list	*current;
+	t_list	*next;
+
+	size = ft_lstsize(*stack);
+	if (size > 1)
+	{
+		current = *stack;
+		next = current->next;
+		current->next = next->next;
+		next->next = current;
+		*stack = next;
+	}
+}
 
 /*
 * swap a - intercambia los dos primeros elementos encima del stack a. No hace
@@ -18,19 +35,8 @@
 */
 void	sa(t_list **stack_a)
 {
-	int		size;
-	t_list	*current;
-	t_list	*next;
-
-	size = ft_lstsize(*stack_a);
-	if (size > 1)
-	{
-		current = *stack_a;
-		next = current->next;
-		current->next = next->next;
-		next->next = current;
-		*stack_a = next;
-	}
+	swap(stack_a);
+	ft_putstr("sa\n");
 }
 
 /*
@@ -39,19 +45,8 @@ void	sa(t_list **stack_a)
 */
 void	sd(t_list **stack_b)
 {
-	int		size;
-	t_list	*current;
-	t_list	*next;
-
-	size = ft_lstsize(*stack_b);
-	if (size > 1)
-	{
-		current = *stack_b;
-		next = current->next;
-		current->next = next->next;
-		next->next = current;
-		*stack_b = next;
-	}
+	swap(stack_b);
+	ft_putstr("sb\n");
 }
 
 /*
@@ -59,6 +54,7 @@ void	sd(t_list **stack_b)
 */
 void	ss(t_list **stack_a, t_list **stack_b)
 {
-	sa(stack_a);
-	sb(stack_b);
+	swap(stack_a);
+	swap(stack_b);
+	ft_putstr("ss\n");
 }
