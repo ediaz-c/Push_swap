@@ -3,18 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:25:57 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 14:21:00 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:06:00 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_error(char *error)
+void	vabien(void)
 {
-	ft_putstr_fd("\033[1;31mERROR: \033[0m", 1);
-	ft_putendl_fd(error, 1);
+	printf("VA BIEN\n");
+}
+
+void	ft_error(void)
+{
+	ft_putstr_fd("Error", 1);
 	exit (0);
 }

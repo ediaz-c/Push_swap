@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:17:35 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 13:43:40 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:52:53 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,16 @@ typedef struct s_list
 }	t_list;
 
 // Errores
-void	ft_error(char *error);
+void	ft_error(void);
+void	vabien(void);
 
 // UTILS
 void	ft_check_args(int ac, char **args);
 void	ft_free(char **stack);
 void	ft_add_index(t_list **stack);
 int		ft_is_sort(t_list	**stack);
+void	ft_putstr(char *str);
+// MOVEMENTS
 
 // SRC
 void	ft_add_stack(t_list **stack, int num_args, char **args);
