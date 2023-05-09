@@ -19,7 +19,6 @@ $(NAME):	$(OBJS) $(INCLUDE) $(LIBFT)
 
 $(LIBFT):
 	@make -C libft
-
 sanitize:
 	$(CC) -fsanitize=address $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
 clean:
