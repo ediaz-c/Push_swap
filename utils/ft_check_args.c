@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:53:46 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 14:20:22 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:05:14 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	ft_check_args(int ac, char **args)
 	{
 		current = ft_atoi(stack[i]);
 		if (ft_is_number(stack[i]) == 0)
-			ft_error("Argumento no valido");
+			ft_error();
 		else if (ft_is_rep(stack, i, current) == 0)
-			ft_error("Numero repetido");
+			ft_error();
 		else if (current > INT_MAX && current < INT_MIN)
-			ft_error("Numero fuera del limite");
+			ft_error();
 		i++;
 	}
 	if (ac == 2)
