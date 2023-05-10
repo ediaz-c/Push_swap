@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:17:35 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/09 19:57:07 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:48:05 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_free(char **stack);
 void	ft_add_index(t_list **stack);
 int		ft_is_sort(t_list	**stack);
 void	ft_putstr(char *str);
+int		ft_case_three_numbers(t_list **stack_a);
 // MOVEMENTS
 
 // SRC
@@ -58,4 +59,6 @@ void	pb(t_list **stack_a, t_list **stack_b);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
+
+void	ft_print_stack(t_list **stack);
 #endif

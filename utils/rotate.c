@@ -3,25 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:22:51 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 18:57:26 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:23:44 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static void	rotate(t_list **stack)
+static int	rotate(t_list **stack)
 {
 	t_list	*first_node;
 	t_list	*tail;
 
+	if (ft_lstsize(*stack) < 2)
+		return (0);
 	first_node = *stack;
 	tail = ft_lstlast(*stack);
-	*stack = (*stack)->next;
+	*stack = first_node->next;
 	tail->next = first_node;
 	first_node->next = NULL;
+	return (1);
 }
 
 /*
@@ -30,8 +33,8 @@ static void	rotate(t_list **stack)
 */
 void	ra(t_list **stack_a)
 {
-	rotate(stack_a);
-	ft_putstr("ra");
+	if (rotate(stack_a))
+		ft_putstr("ra");
 }
 
 /*
@@ -40,8 +43,8 @@ void	ra(t_list **stack_a)
 */
 void	rb(t_list **stack_b)
 {
-	rotate(stack_b);
-	ft_putstr("rb");
+	if (rotate(stack_b))
+		ft_putstr("rb");
 }
 
 /*

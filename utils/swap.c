@@ -6,27 +6,25 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:07:07 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/09 19:59:36 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:22:19 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static void	swap(t_list **stack)
+static int	swap(t_list **stack)
 {
-	int		size;
 	t_list	*current;
 	t_list	*next;
 
-	size = ft_lstsize(*stack);
-	if (size > 1)
-	{
-		current = *stack;
-		next = current->next;
-		current->next = next->next;
-		next->next = current;
-		*stack = next;
-	}
+	if (ft_lstsize(*stack) < 2)
+		return (0);
+	current = *stack;
+	next = current->next;
+	current->next = next->next;
+	next->next = current;
+	*stack = next;
+	return(1);
 }
 
 /*
@@ -35,8 +33,8 @@ static void	swap(t_list **stack)
 */
 void	sa(t_list **stack_a)
 {
-	swap(stack_a);
-	ft_putstr("sa\n");
+	if (swap(stack_a))
+		ft_putstr("sa");
 }
 
 /*
@@ -45,8 +43,8 @@ void	sa(t_list **stack_a)
 */
 void	sd(t_list **stack_b)
 {
-	swap(stack_b);
-	ft_putstr("sb\n");
+	if (swap(stack_b))
+		ft_putstr("sb");
 }
 
 /*
@@ -54,7 +52,6 @@ void	sd(t_list **stack_b)
 */
 void	ss(t_list **stack_a, t_list **stack_b)
 {
-	swap(stack_a);
-	swap(stack_b);
-	ft_putstr("ss\n");
+	if (swap(stack_a) && swap(stack_b))
+		ft_putstr("ss");
 }

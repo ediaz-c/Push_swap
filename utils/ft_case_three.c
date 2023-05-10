@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_case_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 13:34:03 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/10 11:52:49 by ediaz--c         ###   ########.fr       */
+/*   Created: 2023/05/10 12:30:59 by ediaz--c          #+#    #+#             */
+/*   Updated: 2023/05/10 12:38:09 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_is_sort(t_list	**stack)
+int	ft_case_three_numbers(t_list **stack)
 {
-	t_list	*current;
-	int		move;
+	int	data1;
+	int	data2;
+	int	data3;
 
-	move = 0;
-	current = *stack;
-	while (current->next)
-	{
-		if (current->data > current->next->data)
-			return (0);
-		current = current->next;
-	}
-	return (1);
+	data1 = (*stack)->data;
+	data2 = (*stack)->next->data;
+	data3 = (*stack)->next->next->data;
+	if (data1 > data2 && data3 > data1)
+		return (1);
+	else if (data1 > data2 && data2 > data3)
+		return (2);
+	else if (data1 > data2 && data1 > data3)
+		return (3);
+	else if (data2 > data3 && data3 > data1)
+		return (4);
+	else
+		return (5);	
 }
