@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:17:35 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/10 22:03:05 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/11 13:35:04 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	ft_add_index(t_list **stack);
 int		ft_is_sort(t_list	**stack);
 void	ft_putstr(char *str);
 int		ft_case_three_numbers(t_list **stack_a);
+void	ft_min_num_five(t_list **stack, int index);
+void	ft_min_num_four(t_list **stack, int index);
 // MOVEMENTS
 
 // SRC
@@ -52,7 +54,7 @@ int		ft_lstsize(t_list *lst);
 
 // MOVEMENTS
 void	sa(t_list **stack_a);
-void	sd(t_list **stack_b);
+void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);

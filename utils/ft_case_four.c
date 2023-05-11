@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_case_five.c                                     :+:      :+:    :+:   */
+/*   ft_case_four.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 22:13:59 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/11 13:35:20 by ediaz--c         ###   ########.fr       */
+/*   Created: 2023/05/11 13:31:32 by ediaz--c          #+#    #+#             */
+/*   Updated: 2023/05/11 13:34:39 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,20 @@ static int	ft_get_max_index(t_list *stack, int index)
 	return (pos);
 }
 
-void	ft_min_num_five(t_list **stack, int index)
+void	ft_min_num_four(t_list **stack, int index)
 {
-	int		max_index;
-	int		size;
+	int	pos;
 
-	size = ft_lstsize(*stack);
-	max_index = ft_get_max_index(*stack, index);
-	if (max_index == 1)
+	pos = ft_get_max_index(*stack, index);
+	if (pos == 1)
 		return ;
-	else if (max_index == 2)
+	else if (pos == 2)
 		sa(stack);
-	else if (max_index == 3)
-	{
-		ra(stack);
-		ra(stack);
-	}
-	else if (index == 0 && max_index == 4)
+	else if (pos == 3)
 	{
 		rra(stack);
 		rra(stack);
 	}
-	else if ((max_index == 4 && index == 1) || (max_index == 5 && index == 0))
+	else if (pos == 4)
 		rra(stack);
 }

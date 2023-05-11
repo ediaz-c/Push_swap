@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:30:59 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/10 12:38:09 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/11 12:56:48 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	ft_case_three_numbers(t_list **stack)
 		return (3);
 	else if (data2 > data3 && data3 > data1)
 		return (4);
+	else if (data2 > data1 && data1 > data3)
+		return (5);
 	else
-		return (5);	
+		return (0);
 }

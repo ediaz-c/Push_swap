@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:53:46 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 18:05:14 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:27:13 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	ft_is_number(char *num)
 void	ft_check_args(int ac, char **args)
 {
 	int		i;
-	int		current;
+	long	current;
 	char	**stack;
 
 	i = 0;
@@ -57,11 +57,11 @@ void	ft_check_args(int ac, char **args)
 	while (stack[i])
 	{
 		current = ft_atoi(stack[i]);
-		if (ft_is_number(stack[i]) == 0)
+		if (current > INT_MAX || current < INT_MIN)
+			ft_error();
+		else if (ft_is_number(stack[i]) == 0)
 			ft_error();
 		else if (ft_is_rep(stack, i, current) == 0)
-			ft_error();
-		else if (current > INT_MAX && current < INT_MIN)
 			ft_error();
 		i++;
 	}

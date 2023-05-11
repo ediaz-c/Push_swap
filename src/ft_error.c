@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:25:57 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 18:06:00 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/11 13:45:33 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	vabien(void)
 
 void	ft_error(void)
 {
-	ft_putstr_fd("Error", 1);
+	ft_putstr_fd("Error\n", 1);
 	exit (0);
 }

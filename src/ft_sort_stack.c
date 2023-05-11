@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:18:10 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/11 09:43:51 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/11 13:35:55 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,28 @@ static void	ft_three_numbers(t_list **stack)
 		rra(stack);
 }
 
+static void	ft_four_numbers(t_list **stack_a, t_list **stack_b)
+{
+	ft_min_num_four(stack_a, 0);
+	pb(stack_a, stack_b);
+	ft_three_numbers(stack_a);
+	pa(stack_a, stack_b);
+}
+
 static void	ft_five_numbers(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*max_num;
-	int		i;
+	int	i;
 
 	i = -1;
-	while (++i < 2)
-	{
-		ft_get_max_num();
-		pb(stack_a, stack_b);
-	}
-	//TODO
+	ft_min_num_five(stack_a, 0);
+	pb(stack_a, stack_b);
+	ft_min_num_five(stack_a, 1);
+	pb(stack_a, stack_b);
+	ft_three_numbers(stack_a);
+	if ((*stack_b)->data < (*stack_b)->next->data)
+		sb(stack_b);
+	while(++i < 2)
+		pa(stack_a, stack_b);
 }
 
 
@@ -89,6 +99,8 @@ void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 		sa(stack_a);
 	else if (size == 3)
 		ft_three_numbers(stack_a);
+	else if (size == 4)
+		ft_four_numbers(stack_a, stack_b);
 	else if (size == 5)
 		ft_five_numbers(stack_a, stack_b);
 }

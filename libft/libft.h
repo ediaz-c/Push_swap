@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:37:31 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/08 13:32:51 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:22:32 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nitems, size_t size);
 char	*ft_strrchr(const char *s, int c);
