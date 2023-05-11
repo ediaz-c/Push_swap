@@ -1,50 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_case_five.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 10:21:08 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/10 22:29:41 by ediaz--c         ###   ########.fr       */
+/*   Created: 2023/05/10 22:13:59 by ediaz--c          #+#    #+#             */
+/*   Updated: 2023/05/10 22:23:13 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_print_stack(t_list **stack)
+static int	ft_get_max_index(t_list **stack)
 {
 	t_list	*current;
+	int		max_index;
 
 	current = *stack;
-	while(current)
+	max_index = current->index;
+	while (current)
 	{
-		printf("%d ", current->data);
+		if (max_index < current->index)
+			max_index = current->index;
 		current = current->next;
 	}
-		printf("\n");
+	return (max_index);
 }
 
-int	main(int ac, char **av)
+void    ft_get_max_num(t_list **stack)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	t_list	*current;
+	int		max_index;
 
-	if (ac < 2)
-		ft_error();
-	ft_check_args(ac, av);
-	stack_a = NULL;
-	stack_b = NULL;
-	ft_add_stack(&stack_a, ac, av);
-	if (ft_is_sort(&stack_a))
-	{
-		free(stack_a);
-		free(stack_b);
-		return (0);
-	}
-	ft_sort_stack(&stack_a, &stack_b);
-    ft_print_stack(&stack_a);
-	ft_lstclear(&stack_a);
-	ft_lstclear(&stack_b);
-	return (0);
+	max_index = ft_get_max_index(stack);
 }

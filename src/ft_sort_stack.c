@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:18:10 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/10 12:50:24 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/11 09:43:51 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,21 @@ static void	ft_three_numbers(t_list **stack)
 		rra(stack);
 }
 
+static void	ft_five_numbers(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*max_num;
+	int		i;
+
+	i = -1;
+	while (++i < 2)
+	{
+		ft_get_max_num();
+		pb(stack_a, stack_b);
+	}
+	//TODO
+}
+
+
 static void	radix(t_list **stack_a, t_list **stack_b)
 {
 	int		i;
@@ -63,7 +78,6 @@ static void	radix(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-
 void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
@@ -75,4 +89,6 @@ void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 		sa(stack_a);
 	else if (size == 3)
 		ft_three_numbers(stack_a);
+	else if (size == 5)
+		ft_five_numbers(stack_a, stack_b);
 }
