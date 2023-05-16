@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:53:46 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/11 14:27:13 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/16 10:33:00 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_is_rep(char **args, int index, int current)
 	index ++;
 	while (args[index])
 	{
-		if (current == ft_atoi(args[index]))
+		if (current == ft_atoi_ps(args[index]))
 			return (0);
 		index++;
 	}
@@ -56,7 +56,7 @@ void	ft_check_args(int ac, char **args)
 	}
 	while (stack[i])
 	{
-		current = ft_atoi(stack[i]);
+		current = ft_atoi_ps(stack[i]);
 		if (current > INT_MAX || current < INT_MIN)
 			ft_error();
 		else if (ft_is_number(stack[i]) == 0)

@@ -6,13 +6,14 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:37:31 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/11 14:22:32 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/16 10:29:03 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <limits.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

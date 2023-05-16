@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_ps.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 19:39:18 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/16 10:29:42 by ediaz--c         ###   ########.fr       */
+/*   Created: 2023/05/16 10:30:51 by ediaz--c          #+#    #+#             */
+/*   Updated: 2023/05/16 10:37:45 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-long	ft_atoi(const char *str)
+long	ft_atoi_ps(const char *str)
 {
 	int		i;
-	long	sg;
-	int		nb;
+	int		sg;
+	long	nb;
 
 	i = 0;
 	sg = 1;
@@ -35,5 +35,7 @@ long	ft_atoi(const char *str)
 		nb = (nb * 10) + (str[i] - '0');
 		i++;
 	}
+	if (nb * sg > INT_MAX || nb * sg < INT_MIN)
+		ft_error();
 	return (nb * sg);
 }
