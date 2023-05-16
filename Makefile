@@ -1,6 +1,6 @@
 NAME		=	push_swap
 CC			=	cc
-CFLAGS		=	-Wall -Werror -Wextra -g3
+CFLAGS		=	-Wall -Werror -Wextra
 RM			=	rm -rf
 LIBFT		=	libft/libft.a
 SRC			=	main.c ft_error.c ft_add_stack.c ft_sort_stack.c
