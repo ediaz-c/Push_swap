@@ -6,11 +6,17 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:21:08 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/16 10:02:20 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:21:01 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+// void	leaks(void)
+// {
+// 	system("leaks -q push_swap");
+// }
+// 	// atexit(leaks);
 
 int	main(int ac, char **av)
 {
@@ -27,8 +33,8 @@ int	main(int ac, char **av)
 	ft_add_stack(&stack_a, ac, av);
 	if (ft_is_sort(&stack_a))
 	{
-		free(stack_a);
-		free(stack_b);
+		ft_lstclear(&stack_a);
+		ft_lstclear(&stack_b);
 		return (0);
 	}
 	ft_sort_stack(&stack_a, &stack_b);
