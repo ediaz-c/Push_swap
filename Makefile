@@ -15,18 +15,24 @@ INCLUDE		=	include/push_swap.h
 all:	$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE) $(LIBFT)
-	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
+	@printf "Compilando\n"
+	@$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
 
 $(LIBFT):
 	@make -C libft
 sanitize:
-	$(CC) -fsanitize=address $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
+	@$(CC) -fsanitize=address $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
 clean:
-	$(RM) $(OBJS)
+	@printf "Borrando objetos\n"
+	@$(RM) libft/*.o
+	@$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@printf "Borrando libft.a y push_swap\n"
+	@$(RM) libft/libft.a
+	@$(RM) $(NAME)
 
 re: fclean all
+	@printf "Recompilando\n"
 
 .PHONNY: re fclean clean

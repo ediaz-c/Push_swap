@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:18:10 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/11 13:35:55 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:55:25 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,9 @@ static void	ft_five_numbers(t_list **stack_a, t_list **stack_b)
 	ft_three_numbers(stack_a);
 	if ((*stack_b)->data < (*stack_b)->next->data)
 		sb(stack_b);
-	while(++i < 2)
+	while (++i < 2)
 		pa(stack_a, stack_b);
 }
-
 
 static void	radix(t_list **stack_a, t_list **stack_b)
 {
@@ -76,14 +75,14 @@ static void	radix(t_list **stack_a, t_list **stack_b)
 		j = 0;
 		while (j++ < size)
 		{
-		current = *stack_a;
-		if (((current->index >> i) & 1) == 1)
-			ra(stack_a);
-		else
-			pb(stack_a, stack_b);
+			current = *stack_a;
+			if (((current->index >> i) & 1) == 1)
+				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
 		}
 		while (ft_lstsize(*stack_b) != 0)
-		pa(stack_a, stack_b);
+			pa(stack_a, stack_b);
 		i++;
 	}
 }

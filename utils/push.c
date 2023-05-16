@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:14:16 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/10 12:22:32 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:56:25 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	push(t_list **to, t_list **from)
 	t_list	*current_to;
 	t_list	*current_from;
 	t_list	*tmp;
-	
+
 	if (ft_lstsize(*from) == 0)
 		return (0);
 	current_to = *to;

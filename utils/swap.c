@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:07:07 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/05/11 10:38:53 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:56:35 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	swap(t_list **stack)
 	current->next = next->next;
 	next->next = current;
 	*stack = next;
-	return(1);
+	return (1);
 }
 
 /*
