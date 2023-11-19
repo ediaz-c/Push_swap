@@ -1,5 +1,5 @@
 # Push_swap
-<h2 align="center"><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/clfb0vfvr000608l3yax664zq/project/3079265" alt="ediaz--c's 42 push_swap Score" /></a></h2>
+
 
 Este proyeto permite ordenar números utilizando dos stacks, denominados **a** y **b**, siguiendo una serie de reglas específicas. El objetivo es ordenar los números en el stack a en orden ascendente.
 ## Movimientos disponibles
